@@ -6,7 +6,6 @@ pageEncoding="UTF-8"%>
     <jsp:include page="components/headinfo.jsp" />
     <title>Skånetrafiken - Startsida</title>
   </head>
-
   <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">

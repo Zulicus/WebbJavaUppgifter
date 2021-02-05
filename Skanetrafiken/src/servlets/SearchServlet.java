@@ -1,8 +1,6 @@
 package servlets;
 
-
 import java.io.IOException;
-
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,19 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.SearchBean;
 
-/**
- * Servlet implementation class SearchServlet
- */
 @WebServlet("/SearchServlet")
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public SearchServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 // Here is where the initial search is processed and sent to the Search Results page
@@ -39,5 +30,4 @@ public class SearchServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("searchResults.jsp");
 		rd.forward(request, response);
 	}
-
 }

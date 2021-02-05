@@ -7,29 +7,25 @@
 <title>Skånetrafiken - Sökningar</title>
 </head>
 <body id="page-top">
-
 	<!-- Page Wrapper -->
 	<div id="wrapper">
-
 		<!-- Sidebar -->
 		<jsp:include page="components/sidebar.jsp" />
 		<!-- End of Sidebar -->
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
-
 			<!-- Main Content -->
 			<div id="content"><jsp:include page="components/topbar.jsp"/>
 				<!-- Add content here! -->
-				
+				<h1>Kunde ej hitta Cookies!</h1>
+				<p>Den här functionen kräver att cookies är tillåtna, vänligen kontrollera dina cookies inställningar!</p>
 			</div>
 			<!-- End of Main Content -->
 			<jsp:include page="components/footer.jsp"/>
 		</div>
 		<!-- End of Content Wrapper -->
-
 	</div>
 	<!-- End of Page Wrapper -->
 	<jsp:include page="components/bootstrap.jsp"/>
 </body>
-
 </html>

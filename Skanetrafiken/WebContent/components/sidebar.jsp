@@ -9,10 +9,8 @@
   >
     <div class="sidebar-brand-text mx-3">Skånetrafiken <sup>2</sup></div>
   </a>
-
   <!-- Divider -->
   <hr class="sidebar-divider my-0" />
-
   <!-- Nav Item - Start -->
   <li class="nav-item active">
     <a class="nav-link" href="index.jsp">
@@ -21,7 +19,6 @@
   </li>
   <!-- Divider -->
   <hr class="sidebar-divider my-0" />
-
   <!-- Nav Item - Search -->
   <li class="nav-item active">
     <a class="nav-link" href="search.jsp">
@@ -30,7 +27,6 @@
   </li>
   <!-- Divider -->
   <hr class="sidebar-divider my-0" />
-
   <!-- Nav Item - Previous searches -->
   <li class="nav-item active">
     <a class="nav-link" href="<%=request.getContextPath()%>/CookieServlet">
@@ -39,7 +35,6 @@
   </li>
   <!-- Divider -->
   <hr class="sidebar-divider my-0" />
-
   <!-- Nav Item - Tickets -->
   <li class="nav-item active">
     <a class="nav-link" href="tickets.jsp">
@@ -48,7 +43,6 @@
   </li>
   <!-- Divider -->
   <hr class="sidebar-divider my-0" />
-
   <!-- Nav Item - About -->
   <li class="nav-item active">
     <a class="nav-link" href="about.jsp">
@@ -57,12 +51,10 @@
   </li>
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block" />
-
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle"></button>
   </div>
-
   <!-- Sidebar Message -->
   <div class="sidebar-card">
     <p class="text-center mb-2">

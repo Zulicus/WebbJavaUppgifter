@@ -4,6 +4,7 @@
 	<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
+<!-- Import the bean from searchServlet -->
 <%SearchBean search = (SearchBean) request.getAttribute("searchBean");%>
 <head>
 <jsp:include page="components/headinfo.jsp" />
@@ -25,6 +26,7 @@
 						<div class="row">
 							<div class="col">
 								<ul style="list-style-type:none">
+								<!-- Display all the results -->
 									<%for(int i=0;i<search.getFromLoc().size();i++){%><li><input type="radio" name="from" value="<%= search.getFromLoc().get(i).toLowerCase()%>"> <%= search.getFromLoc().get(i)%></li><%} %>
 								</ul>
 							</div>
@@ -47,7 +49,6 @@
 			<jsp:include page="components/footer.jsp"/>
 		</div>
 		<!-- End of Content Wrapper -->
-
 	</div>
 	<!-- End of Page Wrapper -->
 	<jsp:include page="components/bootstrap.jsp"/>

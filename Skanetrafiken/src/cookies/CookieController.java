@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CookieController {
-
+	// Function to check that cookies are allowed
 	public boolean cookiesAllowed(HttpServletRequest request) {
 		try {
 			Cookie[] cookies = request.getCookies();
@@ -25,6 +25,7 @@ public class CookieController {
 		return false;
 	}
 
+	// Creates a cookie
 	public void createCookie(HttpServletResponse response, String to, String from) {
 		try {
 			String cleanTo = clean(to);
@@ -37,14 +38,18 @@ public class CookieController {
 		}
 	}
 
+	// Cleans out any symbols that are no allowed in cookies
 	private String clean(String string) {
 		return string.replaceAll(" ", "+").replaceAll("Ã¶", "o").replaceAll("Ã¤", "a").replaceAll("Ã¥", "a");
 	}
 
+	// Adds back the spaces of the cookies
 	private String unClean(String string) {
 		return string.replaceAll("\\+", " ");
 	}
 
+	// Searches through cookies to find the ones with the ! which signifies that
+	// they are the correct cookie
 	public ArrayList<String> getCookies(HttpServletRequest request) {
 		ArrayList<String> cookieList = new ArrayList<String>();
 		try {

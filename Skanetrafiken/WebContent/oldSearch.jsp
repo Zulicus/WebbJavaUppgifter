@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@page import="cookies.CookieBean"%>
 <!DOCTYPE html>
+<!-- Imports the bean containing the cookie data -->
 <%CookieBean cookie = (CookieBean) request.getAttribute("cookieBean");%>
 <html>
 <head>
@@ -9,20 +10,18 @@
 <title>Skånetrafiken - Sökningar</title>
 </head>
 <body id="page-top">
-
 	<!-- Page Wrapper -->
 	<div id="wrapper">
-
 		<!-- Sidebar -->
 		<jsp:include page="components/sidebar.jsp" />
 		<!-- End of Sidebar -->
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
-
 			<!-- Main Content -->
 			<div id="content"><jsp:include page="components/topbar.jsp"/>
 				<!-- Add content here! -->
 				<div class="container">
+				<!-- Sends the "previous search" back to the servlet that'll find a rout -->
 					<form action="<%=request.getContextPath()%>/ResultServlet" method="post">
 						<div class="row">
 							<div class="col">
@@ -48,10 +47,8 @@
 			<jsp:include page="components/footer.jsp"/>
 		</div>
 		<!-- End of Content Wrapper -->
-
 	</div>
 	<!-- End of Page Wrapper -->
 	<jsp:include page="components/bootstrap.jsp"/>
 </body>
-
 </html>

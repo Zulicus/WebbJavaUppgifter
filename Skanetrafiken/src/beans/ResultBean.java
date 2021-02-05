@@ -1,5 +1,6 @@
 package beans;
 
+//Just a bean to save data
 public class ResultBean {
 	private String from, to;
 

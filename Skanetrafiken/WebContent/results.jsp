@@ -8,7 +8,6 @@
 <jsp:include page="components/headinfo.jsp" />
     <title>Skånetrafiken - Startsida</title>
 </head>
-
 <body id="page-top">
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -17,7 +16,6 @@
 		<!-- End of Sidebar -->
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
-
 			<!-- Main Content -->
 			<div id="content"><jsp:include page="components/topbar.jsp"/>
 				<!-- Add content here! -->

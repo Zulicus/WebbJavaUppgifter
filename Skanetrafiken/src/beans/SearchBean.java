@@ -28,7 +28,7 @@ public class SearchBean {
 	}
 
 	public ArrayList<String> getToLoc() {
-		if (fromLoc == null) {
+		if (toLoc == null) {
 			getTrip();
 		}
 		return toLoc;
@@ -42,10 +42,10 @@ public class SearchBean {
 		this.to = to;
 	}
 
+	// Gets and sets the search results
 	private void getTrip() {
 		String URLtoSend = "http://www.labs.skanetrafiken.se/v2.2/querypage.asp?inpPointFr=" + from + "from&inpPointTo="
 				+ to;
-
 		try {
 			URL line_api_url = new URL(URLtoSend);
 			HttpURLConnection linec = (HttpURLConnection) line_api_url.openConnection();
@@ -65,10 +65,8 @@ public class SearchBean {
 			Document doc = convertStringToXMLDocument(ApiResponse);
 			doc.getDocumentElement().normalize();
 
-			NodeList nListFrom = doc.getDocumentElement().getFirstChild().getFirstChild().getFirstChild()
-					.getChildNodes().item(2).getChildNodes();
-			NodeList nListTo = doc.getDocumentElement().getFirstChild().getFirstChild().getFirstChild().getChildNodes()
-					.item(3).getChildNodes();
+			NodeList nListFrom = searchThrough(doc).item(2).getChildNodes();
+			NodeList nListTo = searchThrough(doc).item(3).getChildNodes();
 
 			this.fromLoc = generateArray(nListFrom);
 			this.toLoc = generateArray(nListTo);
@@ -78,10 +76,11 @@ public class SearchBean {
 		}
 	}
 
-	private ArrayList<String> generateArray(NodeList nListIn) {
+	// Returns a list of the results
+	private ArrayList<String> generateArray(NodeList nodeList) {
 		ArrayList<String> ArrayList = new ArrayList<String>();
-		for (int i = 0; i < nListIn.getLength(); i++) {
-			NodeList nList = nListIn.item(i).getChildNodes();
+		for (int i = 0; i < nodeList.getLength(); i++) {
+			NodeList nList = nodeList.item(i).getChildNodes();
 			Node node = nList.item(1);
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) node;
@@ -91,6 +90,7 @@ public class SearchBean {
 		return ArrayList;
 	}
 
+	// Converts strings to XML documents
 	private Document convertStringToXMLDocument(String xmlString) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = null;
@@ -102,5 +102,10 @@ public class SearchBean {
 			System.out.println(e);
 		}
 		return null;
+	}
+
+	// Function to clean up the main code
+	private NodeList searchThrough(Document doc) {
+		return doc.getDocumentElement().getFirstChild().getFirstChild().getFirstChild().getChildNodes();
 	}
 }

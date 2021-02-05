@@ -6,7 +6,7 @@
 />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<link rel="icon" href="components/images/min_skï¿½_log.png" />
+<link rel="icon" href="components/images/min_skå_log.png" />
 <%@page import="servlets.CookieServlet"%>
 <!-- Custom fonts for this template-->
 <link
